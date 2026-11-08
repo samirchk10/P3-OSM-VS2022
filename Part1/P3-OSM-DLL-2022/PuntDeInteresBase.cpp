@@ -25,3 +25,4 @@ unsigned int PuntDeInteresBase::getColor() {
 }
 
 
+//HOLA
