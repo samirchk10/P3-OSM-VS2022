@@ -16,7 +16,6 @@ Release/
 *.log
 Log.txt
 
-# ...però sí que volem les llibreries de third-party
 !Part1/third-party/**
 
 # macOS
