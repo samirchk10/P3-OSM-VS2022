@@ -1,0 +1,28 @@
+# Visual Studio
+.vs/
+bin/
+obj/
+x64/
+x86/
+ARM64/
+Debug/
+Release/
+*.user
+*.suo
+*.VC.db
+*.VC.opendb
+*.ipch
+*.aps
+*.log
+Log.txt
+
+# ...però sí que volem les llibreries de third-party
+!Part1/third-party/**
+
+# macOS
+.DS_Store
+
+# ZIPs originals de Caronte
+_zips/
+*.zip
+*.ZIP
