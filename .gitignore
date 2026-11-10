@@ -20,6 +20,7 @@ Log.txt
 
 # macOS
 .DS_Store
+._*
 
 # ZIPs originals de Caronte
 _zips/
