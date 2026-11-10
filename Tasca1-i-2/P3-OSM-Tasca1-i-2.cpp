@@ -8,10 +8,10 @@ int main()
     std::cout << "===============================================================" << std::endl;
 
 	XmlElement viejoRoble = {
-		//id_element = 
+		//id_element =
 			"node",
 
-		// atributs = 
+		// atributs =
 		{
 			std::make_pair("id", "357101444"),
 			std::make_pair("visible", "true"),
@@ -24,7 +24,7 @@ int main()
 			std::make_pair("lon", "2.1406477")
 		},
 
-		// fills = 
+		// fills =
 		{
 			std::make_pair<std::string,std::vector<std::pair<std::string, std::string>>>
 				("tag", {
@@ -80,22 +80,22 @@ int main()
 
 	/*
 		Tasca 1:
-		Imprimir per pantalla l’identificador, latitud (lat), l’longitud (lon), 
+		Imprimir per pantalla l’identificador, latitud (lat), l’longitud (lon),
 		així com el nom (name), del element XML viejoRoble construit en aquest apartat 2.2.
-		
+
 		Teniu en compte que, almenys, haureu de transformar latitud i longitud a tipus double.
-		
-		Recordeu que en la solució de la pràctica haureu de recollir tots els punts d’interés, 
+
+		Recordeu que en la solució de la pràctica haureu de recollir tots els punts d’interés,
 		que per definició, són nodes que no són nodes de camí que tenen un atribut name.
 	*/
 
-	// TODO Tasca1 
+	// TODO Tasca1
 
 	XmlElement camiJoaquim = {
-		// id_element = 
+		// id_element =
 		"way",
 
-		// atributs = 
+		// atributs =
 		{
 			std::make_pair("id", "31889094"),
 			std::make_pair("visible", "true"),
@@ -106,7 +106,7 @@ int main()
 			std::make_pair("uid", "3414856")
 		},
 
-		// fills = 
+		// fills =
 		{
 				std::make_pair<std::string, std::vector<std::pair<std::string, std::string>>>
 					("nd",	{
@@ -114,42 +114,42 @@ int main()
 							}),
 
 				std::make_pair<std::string, std::vector<std::pair<std::string, std::string>>>
-					("nd", 
+					("nd",
 							{
 								std::make_pair("ref", "8591278795")
 							}),
 
 				std::make_pair< std::string, std::vector<std::pair<std::string, std::string>>>
-					("nd", 
+					("nd",
 							{
 								std::make_pair("ref", "357124693")
 							}),
 
 				std::make_pair<std::string, std::vector<std::pair<std::string, std::string>>>
-					("nd",	
+					("nd",
 							{
 								std::make_pair("ref", "357125054")
 							}),
 				std::make_pair<std::string, std::vector<std::pair<std::string, std::string>>>
-					("tag", 
+					("tag",
 							{
 								std::make_pair("k", "highway"),
 								std::make_pair("v", "living_street")
 							}),
 				std::make_pair<std::string, std::vector<std::pair<std::string, std::string>>>
-					("tag", 
+					("tag",
 							{
 								std::make_pair("k", "name"),
 								std::make_pair("v", "Carrer de Sant Joaquim")
 							}),
 				std::make_pair<std::string, std::vector<std::pair<std::string, std::string>>>
-					("tag", 
+					("tag",
 							{
 								std::make_pair("k", "oneway"),
 								std::make_pair("v", "yes")
 							}),
 				std::make_pair<std::string, std::vector<std::pair<std::string, std::string>>>
-					("tag", 
+					("tag",
 							{
 								std::make_pair("k", "surface"),
 								std::make_pair("v", "paving_stones")
@@ -160,18 +160,39 @@ int main()
 
 
 	/*
-		Tasca 2: 
-		Imprimir per pantalla els identificadors dels nodes 
-		que formen el XmlElement camiJoaquim, així com el valor del atribut highway. 
-		
-		Recordeu que en la solució de la pràctica només haureu de tenir en compte 
-		tots els camins que tenen el tag highway (independentment del valor que pugui tenir), 
+		Tasca 2:
+		Imprimir per pantalla els identificadors dels nodes
+		que formen el XmlElement camiJoaquim, així com el valor del atribut highway.
+
+		Recordeu que en la solució de la pràctica només haureu de tenir en compte
+		tots els camins que tenen el tag highway (independentment del valor que pugui tenir),
 		així com saber quins nodes de tipus camí, formen cada camí.
 	*/
 
-	// TODO Tasca2 
+	// TODO Tasca2
+	if (camiJoaquim.id_element == "way")
+	{
+	    std::string valorHighway = "";
+
+		for (int i = 0; i < camiJoaquim.fills.size(); i++)
+		{
+		    if (camiJoaquim.fills[i].first == "nd")
+		    {
+		        std::cout << camiJoaquim.fills[i].second[0].second << std::endl;
+			}
+
+	        else if (camiJoaquim.fills[i].first == "tag")
+		    {
+				std::pair<std::string, std::string> tag = Util::kvDeTag(camiJoaquim.fills[i].second);
+
+				if (tag.first == "highway")
+				{
+				    valorHighway = tag.second;
+				}
+			}
+		}
+		std::cout << "highway: " << valorHighway << std::endl;
+	}
 
 	return 0;
-
 }
-
