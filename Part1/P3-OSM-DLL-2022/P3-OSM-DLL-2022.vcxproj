@@ -250,9 +250,7 @@
     <ItemGroup>
       <_XercesDll Include="$(RepoRoot)third-party\bin\$(_XercesPlatform)\$(Configuration)\*.dll" />
     </ItemGroup>
-    <Copy SourceFiles="@(_XercesDll)"
-          DestinationFolder="$(OutDir)"
-          SkipUnchangedFiles="true" />
+    <Copy SourceFiles="@(_XercesDll)" DestinationFolder="$(OutDir)" SkipUnchangedFiles="true" />
   </Target>
   <ItemGroup>
     <ClInclude Include="Common.h" />
@@ -262,6 +260,7 @@
     <ClInclude Include="pch.h" />
     <ClInclude Include="CamiBase.h" />
     <ClInclude Include="PuntDeInteresBase.h" />
+    <ClInclude Include="PuntDeInteresRestaurantSolucio.h" />
     <ClInclude Include="Util.h" />
     <ClInclude Include="XML4OSMUtil.h" />
   </ItemGroup>
@@ -278,6 +277,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="PuntDeInteresBase.cpp" />
+    <ClCompile Include="PuntDeInteresRestaurantSolucio.cpp" />
     <ClCompile Include="Util.cpp" />
     <ClCompile Include="XML4OSMUtil.cpp" />
   </ItemGroup>
