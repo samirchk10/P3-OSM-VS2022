@@ -180,8 +180,7 @@ int main()
 		    {
 		        std::cout << camiJoaquim.fills[i].second[0].second << std::endl;
 			}
-
-	        else if (camiJoaquim.fills[i].first == "tag")
+			else if (camiJoaquim.fills[i].first == "tag")
 		    {
 				std::pair<std::string, std::string> tag = Util::kvDeTag(camiJoaquim.fills[i].second);
 
