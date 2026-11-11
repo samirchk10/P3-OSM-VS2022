@@ -6,5 +6,6 @@
 
 class CamiSolucio : public CamiBase
 {
-    std::vector<Coordinate> getCamiCoords() override;
+    public:
+        std::vector<Coordinate> getCamiCoords() override;
 };

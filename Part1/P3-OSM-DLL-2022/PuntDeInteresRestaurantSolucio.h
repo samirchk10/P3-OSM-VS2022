@@ -6,6 +6,7 @@
 class PuntDeInteresRestaurantSolucio : public PuntDeInteresBase
 {
     public:
+        PuntDeInteresRestaurantSolucio() : PuntDeInteresBase(), m_cuisine(""), m_wheelchair("") {}
         PuntDeInteresRestaurantSolucio(Coordinate coordenada, const std::string& nom, const std::string& cuisine,
             const std::string& wheelchair) :
             PuntDeInteresBase(coordenada, nom), m_cuisine(cuisine), m_wheelchair(wheelchair) {}
